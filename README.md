@@ -28,3 +28,15 @@ Now, let's replace the 180K sample.pdf file with a larger 14M version:
     $ git push
     Uploading LFS objects: 100% (1/1), 14 MB | 0 B/s, done.
     [..]
+
+Finally, let's restore the old 180K sample.pdf:
+
+    $ du -shx sample.pdf
+     14M    sample.pdf
+    $ cp /original/small.pdf sample.pdf
+    $ du -shx sample.pdf
+     180K   sample.pdf
+    $ git add sample.pdf
+    $ git push
+    Uploading LFS objects: 100% (1/1), 184K | 0 B/s, done.
+    [..]
