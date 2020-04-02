@@ -22,3 +22,13 @@ Notice the `Uploading LFS objects` line in the output of `git push`. The 180K sa
     Total 5 (delta 0), reused 2 (delta 0)
     To github.com:cbeams/lfs-test.git
        edce04c..e723962  master -> master
+
+Now, let's replace the 180K sample.pdf file with a larger 14M version:
+
+    $ du -shx sample.pdf
+     180K   sample.pdf
+    $ cp /some/large.pdf sample.pdf
+    $ du -shx sample.pdf
+     14M    sample.pdf
+    $ git add sample.pdf
+    $ git push
